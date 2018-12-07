@@ -1,4 +1,5 @@
 ---
+# After this, you need to set the password for jhillix manually with root user
 - name: Add the user 'jhillix' with a bash shell
   user:
     name: jhillix
