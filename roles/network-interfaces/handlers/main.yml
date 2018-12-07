@@ -1,0 +1,10 @@
+---
+- name: enable systemd-networkd
+  systemd:
+    name: systemd-networkd
+    enabled: yes
+
+- name: enable systemd-resolved
+  systemd:
+    name: systemd-resolved
+    enabled: yes
