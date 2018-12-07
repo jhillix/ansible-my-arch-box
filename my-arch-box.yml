@@ -4,6 +4,7 @@
   vars:
     home: "/home/jhillix"
   roles:
-   - base
-   - desktop-environment
-   - wifi
+#   - base
+   - network-interfaces
+#   - desktop-environment
+#   - wifi

@@ -1,0 +1,17 @@
+---
+# Refer to https://wiki.archlinux.org/index.php/Network_configuration#Change_interface_name for more information
+- name: Revert to traditional interface names
+  file:
+    src: /dev/null
+    dest: /etc/udev/rules.d/80-net-setup-link.rules
+    state: link
+
+- name: Create DHCP client profile for wlan0
+  template:
+    src: 25-wlan0.network.j2
+    dest: /etc/systemd/network/25-wlan0.network
+
+- name: Create DHCP client profile for eth0
+  template:
+    src: 20-eth0.network.j2
+    dest: /etc/systemd/network/20-eth0.network
