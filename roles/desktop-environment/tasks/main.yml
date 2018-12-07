@@ -4,7 +4,12 @@
     name: [xorg-server, xorg-apps, xorg-xinit]
     state: present
 
-#- name: Install graphics driver
 # Check for the correct graphics driver for your system and update here if needed
+# Ex. lspci | grep -i --color 'vga\|3d\|2d'
+- name: Install graphics driver
+  pacman:
+    name: xf86-video-intel
+    state: present
+
 
 #- name: Install display manager
