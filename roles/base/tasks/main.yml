@@ -1,1 +1,44 @@
 ---
+# Following the Arch wiki (https://wiki.archlinux.org/index.php/installation_guide) starting after "Chroot" in
+# "Configure the system" section
+- name: Set the time zone (change as Reigon and City as needed)
+  file:
+    src: /usr/share/zoneinfo/America/Chicago
+    dest: /opt/m2mclient
+    state: link
+
+# Trying to be idempotent here. Reference: https://ansibledaily.com/idempotent-shell-command-in-ansible/
+- name: Run hwclock to generate /etc/adjtime
+  shell: >
+    test -e /etc/adjtime && echo "Found" || hwclock --systohc
+  register: adjtime
+  changed_when: adjtime.stdout != "Found"
+  args:
+    executable: /bin/bash
+
+- name: Configure locales
+  template:
+    src: locale.gen.j2
+    dest: /etc/locale.gen
+
+- name: Generate localization
+  shell: >
+    locale-gen
+  args:
+    executable: /bin/bash
+
+- name: Set the LANG variable in locale.conf
+  template:
+    src: locale.conf.j2
+    dest: /etc/locale.conf
+
+- name: Create the hostname file
+  template:
+    src: hostname.j2
+    dest: /etc/hostname
+
+- name: Add matching entries to hosts
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+
