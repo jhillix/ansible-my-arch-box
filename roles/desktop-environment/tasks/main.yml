@@ -5,10 +5,10 @@
     state: present
   with_items:
   - xorg-server
-  - xorg-server-utils
-  - xorg-init
+  - xorg-apps
+  - xorg-xinit
 
-- name: Install graphics driver
+#- name: Install graphics driver
 # Check for the correct graphics driver for your system and update here if needed
 
 #- name: Install display manager
