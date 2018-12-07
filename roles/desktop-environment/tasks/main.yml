@@ -1,12 +1,8 @@
 ---
 - name: Install display server (X.Org) bits
   pacman:
-    name: "{{ item }}"
+    name: [xorg-server, xorg-apps, xorg-xinit]
     state: present
-  with_items:
-  - xorg-server
-  - xorg-apps
-  - xorg-xinit
 
 #- name: Install graphics driver
 # Check for the correct graphics driver for your system and update here if needed
