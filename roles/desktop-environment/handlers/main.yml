@@ -1,0 +1,5 @@
+---
+- name: enable lxdm
+  systemd:
+    name: lxdm
+    enabled: yes
