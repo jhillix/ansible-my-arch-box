@@ -1,0 +1,7 @@
+---
+- name: Add the user 'jhillix' with a bash shell
+  user:
+    name: jhillix
+    shell: /bin/bash
+    groups: users
+    append: yes

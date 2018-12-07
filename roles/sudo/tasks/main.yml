@@ -1,0 +1,10 @@
+---
+- name: Install sudo
+  pacman:
+    name: sudo
+    state: present
+
+- name: Configure user 'jhillix' in sudoers file
+  template:
+    src: sudoers.j2
+    dest: /etc/sudoers
