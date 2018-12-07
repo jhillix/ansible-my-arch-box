@@ -1,0 +1,9 @@
+---
+- hosts: local
+  user: pi
+  vars:
+    home: "/home/pi"
+  roles:
+   - base
+   - desktop
+   - wifi
