@@ -1,0 +1,7 @@
+---
+- name: Install display server (X.Org)
+
+- name: Install graphics driver
+# Check for the correct graphics driver for your system and update here if needed
+
+- name: Install display manager

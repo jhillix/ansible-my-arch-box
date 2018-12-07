@@ -5,5 +5,5 @@
     home: "/home/pi"
   roles:
    - base
-   - desktop
+   - desktop-environment
    - wifi
