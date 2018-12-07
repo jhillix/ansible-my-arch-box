@@ -11,5 +11,7 @@
     name: xf86-video-intel
     state: present
 
-
-#- name: Install display manager
+- name: Install display manager
+  pacman:
+    name: lxdm
+    state: present
