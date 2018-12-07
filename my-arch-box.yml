@@ -1,8 +1,8 @@
 ---
 - hosts: local
-  user: pi
+  user: jhillix
   vars:
-    home: "/home/pi"
+    home: "/home/jhillix"
   roles:
    - base
    - desktop-environment
