@@ -8,5 +8,5 @@
    - network-interfaces
    - user
    - sudo
-#   - desktop-environment
+   - desktop-environment
 #   - wifi

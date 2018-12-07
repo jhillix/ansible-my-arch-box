@@ -1,7 +1,14 @@
 ---
-- name: Install display server (X.Org)
+- name: Install display server (X.Org) bits
+  pacman:
+    name: sudo
+    state: present
+  with_items:
+  - xorg-server
+  - xorg-server-utils
+  - xorg-init
 
-- name: Install graphics driver
+#- name: Install graphics driver
 # Check for the correct graphics driver for your system and update here if needed
 
-- name: Install display manager
+#- name: Install display manager
