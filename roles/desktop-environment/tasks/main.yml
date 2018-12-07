@@ -15,3 +15,8 @@
   pacman:
     name: lxdm
     state: present
+
+- name: Install desktop environment
+  pacman:
+    name: cinnamon
+    state: present
