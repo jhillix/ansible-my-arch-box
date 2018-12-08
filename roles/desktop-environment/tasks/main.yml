@@ -54,3 +54,8 @@
 #   pacman:
 #     name: gnome-screenshot
 #     state: present
+
+- name: Create 'workspace' directory
+  file:
+    path: /home/jhillix/workspace
+    state: directory

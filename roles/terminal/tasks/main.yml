@@ -1,0 +1,5 @@
+---
+- name: Install gnome-terminal
+  pacman:
+    name: gnome-terminal
+    state: present
