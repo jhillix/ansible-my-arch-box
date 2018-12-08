@@ -1,0 +1,5 @@
+---
+- name: Install AUR support for Ansible
+  git:
+    repo: https://github.com/kewlfft/ansible-aur.git
+    dest: "{{ home }}/.ansible/plugins/modules/aur"
