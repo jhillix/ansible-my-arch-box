@@ -1,0 +1,6 @@
+---
+- name: Install bash-completion
+  pacman:
+    name: bash-completion
+    state: present
+  become: yes

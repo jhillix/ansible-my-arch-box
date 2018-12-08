@@ -3,3 +3,4 @@
   pacman:
     name: wpa_supplicant
     state: present
+  become: yes

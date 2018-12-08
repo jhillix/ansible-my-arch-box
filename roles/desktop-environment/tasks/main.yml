@@ -3,6 +3,7 @@
   pacman:
     name: [xorg-server, xorg-apps, xorg-xinit]
     state: present
+  become: yes
 
 # Check for the correct graphics driver for your system and update here if needed
 # Ex. lspci | grep -i --color 'vga\|3d\|2d'
@@ -10,16 +11,19 @@
   pacman:
     name: xf86-video-intel
     state: present
+  become: yes
 
 - name: Install display manager
   pacman:
     name: lxdm
     state: present
+  become: yes
 
 - name: Install desktop environment (Cinnamon)
   pacman:
     name: cinnamon
     state: present
+  become: yes
   notify:
   - enable lxdm
 
@@ -27,6 +31,7 @@
   pacman:
     name: networkmanager
     state: present
+  become: yes
   notify:
   - enable NetworkManager
 
@@ -34,11 +39,13 @@
   pacman:
     name: gnome-keyring
     state: present
+  become: yes
 
 - name: Install blueberry (to add Bluetooth support)
   pacman:
     name: blueberry
     state: present
+  become: yes
 
 # - name: Install Cinnamon themes and icons
 #   pacman:

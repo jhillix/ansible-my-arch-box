@@ -3,8 +3,10 @@
   pacman:
     name: sudo
     state: present
+  become: yes
 
 - name: Configure user 'jhillix' in sudoers file
   template:
     src: sudoers.j2
     dest: /etc/sudoers
+  become: yes
