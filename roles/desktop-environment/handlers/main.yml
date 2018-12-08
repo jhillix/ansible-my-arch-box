@@ -3,3 +3,8 @@
   systemd:
     name: lxdm
     enabled: yes
+
+- name: enable NetworkManager
+  systemd:
+    name: NetworkManager
+    enabled: yes

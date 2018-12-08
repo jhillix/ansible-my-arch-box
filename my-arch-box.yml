@@ -5,6 +5,7 @@
     home: "/home/jhillix"
   roles:
 #   - base
+   - update-cache
    - network-interfaces
    - user
    - sudo

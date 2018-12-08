@@ -16,9 +16,41 @@
     name: lxdm
     state: present
 
-- name: Install desktop environment
+- name: Install desktop environment (Cinnamon)
   pacman:
     name: cinnamon
     state: present
   notify:
   - enable lxdm
+
+- name: Install networkmanager
+  pacman:
+    name: networkmanager
+    state: present
+  notify:
+  - enable NetworkManager
+
+- name: Install gnome-keyring
+  pacman:
+    name: gnome-keyring
+    state: present
+
+- name: Install blueberry (to add Bluetooth support)
+  pacman:
+    name: blueberry
+    state: present
+
+# - name: Install Cinnamon themes and icons
+#   pacman:
+#     name: blueberry
+#     state: present
+
+# - name: Install Cinnamon sound events
+#   pacman:
+#     name: blueberry
+#     state: present
+
+# - name: Install gnome-screenshot
+#   pacman:
+#     name: gnome-screenshot
+#     state: present
