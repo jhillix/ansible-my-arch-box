@@ -1,0 +1,6 @@
+---
+- name: Install kicad
+  pacman:
+    name: kicad
+    state: present
+  become: yes

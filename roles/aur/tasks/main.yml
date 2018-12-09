@@ -1,5 +1,16 @@
 ---
-- name: Install AUR support for Ansible
-  git:
-    repo: https://github.com/kewlfft/ansible-aur.git
-    dest: "{{ home }}/.ansible/plugins/modules/aur"
+- name: Install ulauncher
+  aur:
+    name: ulauncher
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install mailspring
+  aur:
+    name: mailspring
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder

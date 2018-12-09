@@ -9,10 +9,14 @@
    - network-interfaces
    - user
    - sudo
+   - ansible
+   - base-devel
    - desktop-environment
+   - papirus
    - wifi
    - terminal
    - git
    - intellij
    - chromium
    - aur
+   - kicad

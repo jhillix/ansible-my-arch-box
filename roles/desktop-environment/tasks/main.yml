@@ -47,20 +47,39 @@
     state: present
   become: yes
 
-# - name: Install Cinnamon themes and icons
-#   pacman:
-#     name: blueberry
-#     state: present
+- name: Install Cinnamon themes and icons
+  aur:
+    name:
+      - mint-y-icons
+      - mint-x-icons
+      - mint-themes
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
 
-# - name: Install Cinnamon sound events
-#   pacman:
-#     name: blueberry
-#     state: present
+# TODO: Broken - but running manually works
+#- name: Install Cinnamon sound events
+#  aur:
+#    name:
+#      - cinnamon-sound-effects
+#      - mint-sounds
+#    use: makepkg
+#    skip_installed: yes
+#  become: yes
+#  become_user: aur_builder
 
-# - name: Install gnome-screenshot
-#   pacman:
-#     name: gnome-screenshot
-#     state: present
+- name: Install Google Noto Mono Regular
+  pacman:
+    name: noto-fonts
+    state: present
+  become: yes
+
+- name: Install gnome-screenshot
+  pacman:
+    name: gnome-screenshot
+    state: present
+  become: yes
 
 - name: Create 'workspace' directory
   file:

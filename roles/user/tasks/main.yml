@@ -6,3 +6,10 @@
     shell: /bin/bash
     groups: users
     append: yes
+  become: yes
+
+- name: Add the user 'aur_builder'
+  user:
+    name: aur_builder
+    group: wheel
+  become: yes
