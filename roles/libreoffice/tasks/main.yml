@@ -1,0 +1,6 @@
+---
+- name: Install libreoffice
+  pacman:
+    name: libreoffice-fresh
+    state: present
+  become: yes

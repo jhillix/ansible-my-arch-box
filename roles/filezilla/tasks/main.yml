@@ -1,0 +1,6 @@
+---
+- name: Install filezilla
+  pacman:
+    name: filezilla
+    state: present
+  become: yes

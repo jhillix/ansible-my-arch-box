@@ -1,0 +1,6 @@
+---
+- name: Install pulseview (A Qt based logic analyzer GUI for sigrok)
+  pacman:
+    name: pulseview
+    state: present
+  become: yes
