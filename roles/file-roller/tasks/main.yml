@@ -1,0 +1,6 @@
+---
+- name: Install archive utility
+  pacman:
+    name: file-roller
+    state: present
+  become: yes
