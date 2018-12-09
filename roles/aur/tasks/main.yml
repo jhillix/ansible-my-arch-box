@@ -30,3 +30,11 @@
     skip_installed: yes
   become: yes
   become_user: aur_builder
+
+- name: Install sublime-text2
+  aur:
+    name: sublime-text2
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
