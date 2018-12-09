@@ -1,0 +1,49 @@
+---
+# Following and making necessary changes for Arch: rtl-sdr4linux_quickstartv10-16.pdf
+
+# This package installs the necessary udev rule and blacklist
+- name: Install rtl-sdr (RTL-SDR osmocom driver)
+  pacman:
+    name: rtl-sdr
+    state: present
+  become: yes
+
+- name: Install gqrx
+  pacman:
+    name: gqrx
+    state: present
+  become: yes
+
+- name: Install dump1090-git
+  aur:
+    name: dump1090-git
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install mono
+  pacman:
+    name: mono
+    state: present
+  become: yes
+
+#- name: Install VirtualRadar
+
+- name: Install rtl-power-fftw
+  aur:
+    name: rtl_power_fftw-git
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install qspectrumanalyzer
+  pacman:
+    name: qspectrumanalyzer
+    state: present
+  become: yes
+
+#- name: Install SDR Trunk?
+
+#- name: Install rtl_433?
