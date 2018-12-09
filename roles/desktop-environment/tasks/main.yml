@@ -81,6 +81,14 @@
     state: present
   become: yes
 
+- name: Generate the usual suspects
+  pacman:
+    name: xdg-user-dirs
+    state: present
+  become: yes
+  notify:
+    - xdg-user-dirs-update
+
 - name: Create 'workspace' directory
   file:
     path: /home/jhillix/workspace

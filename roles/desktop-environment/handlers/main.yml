@@ -8,3 +8,10 @@
   systemd:
     name: NetworkManager
     enabled: yes
+
+# This will only run when its attached task runs due to a change
+- name: xdg-user-dirs-update
+  shell: >
+    xdg-user-dirs-update
+  args:
+    executable: /bin/bash
