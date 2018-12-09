@@ -5,6 +5,7 @@
     home: "/home/jhillix"
   roles:
 #   - base
+   - multilib
    - update-cache
    - network-interfaces
    - user
@@ -18,6 +19,7 @@
    - git
    - intellij
    - chromium
+   - wine
    - aur
    - kicad
    - libreoffice
