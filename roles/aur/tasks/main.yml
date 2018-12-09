@@ -38,12 +38,3 @@
     skip_installed: yes
   become: yes
   become_user: aur_builder
-
-# You might need to run this first from the cli (ltspice) for setup
-- name: Install ltspice
-  aur:
-    name: ltspice
-    use: makepkg
-    skip_installed: yes
-  become: yes
-  become_user: aur_builder

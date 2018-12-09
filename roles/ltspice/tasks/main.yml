@@ -1,0 +1,27 @@
+---
+- name: Enable multilib (for wine)
+  template:
+    src: pacman.conf.j2
+    dest: /etc/pacman.conf
+  become: yes
+
+- name: Update cache with newly enabled multilib repo
+  pacman:
+    update_cache: yes
+    upgrade: yes
+  become: yes
+
+- name: Install wine
+  pacman:
+    name: wine
+    state: present
+  become: yes
+
+# You might need to run this first from the cli (ltspice) for setup
+- name: Install ltspice
+  aur:
+    name: ltspice
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
