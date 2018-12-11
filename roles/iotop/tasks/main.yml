@@ -1,0 +1,6 @@
+---
+- name: Install iotop
+  pacman:
+    name: iotop
+    state: present
+  become: yes

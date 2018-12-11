@@ -38,3 +38,11 @@
     skip_installed: yes
   become: yes
   become_user: aur_builder
+
+- name: Install slack-desktop
+  aur:
+    name: slack-desktop
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
