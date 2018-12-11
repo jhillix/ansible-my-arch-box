@@ -91,5 +91,5 @@
 
 - name: Create 'workspace' directory
   file:
-    path: /home/jhillix/workspace
+    path: "{{  home  }}/workspace"
     state: directory

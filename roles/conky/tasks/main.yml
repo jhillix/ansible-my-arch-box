@@ -1,0 +1,16 @@
+---
+- name: Install conky
+  pacman:
+    name: conky
+    state: present
+  become: yes
+
+- name: Create config directory
+  file:
+    path: "{{ home }}/.config/conky"
+    state: directory
+
+- name: copy config 'Conky for laptop'
+  template:
+    src: conky.conf.j2
+    dest: "{{ home }}/.config/conky/conky.conf"
