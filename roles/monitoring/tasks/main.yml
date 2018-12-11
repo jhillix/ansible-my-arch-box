@@ -1,0 +1,34 @@
+---
+- name: Install iotop
+  pacman:
+    name: iotop
+    state: present
+  become: yes
+
+- name: Install gnome-system-monitor
+  pacman:
+    name: gnome-system-monitor
+    state: present
+  become: yes
+
+- name: Install htop
+  pacman:
+    name: htop
+    state: present
+  become: yes
+
+#- name: Install conky
+#  pacman:
+#    name: conky
+#    state: present
+#  become: yes
+#
+#- name: Create conky config directory
+#  file:
+#    path: "{{ home }}/.config/conky"
+#    state: directory
+#
+#- name: copy config 'Conky for laptop'
+#  template:
+#    src: conky.conf.j2
+#    dest: "{{ home }}/.config/conky/conky.conf"

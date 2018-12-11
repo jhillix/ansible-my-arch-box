@@ -30,6 +30,4 @@
 #   - eznec
 #   - 4nec2
    - viewnior
-   - iotop
-#   - conky
-   - gnome-system-monitor
+   - monitoring

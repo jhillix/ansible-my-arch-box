@@ -1,6 +1,0 @@
----
-- name: Install gnome-system-monitor
-  pacman:
-    name: gnome-system-monitor
-    state: present
-  become: yes
