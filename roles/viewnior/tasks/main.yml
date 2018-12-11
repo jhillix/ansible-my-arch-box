@@ -1,0 +1,6 @@
+---
+- name: Install viewnior (image viewer)
+  pacman:
+    name: viewnior
+    state: present
+  become: yes
