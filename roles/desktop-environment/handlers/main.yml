@@ -9,6 +9,11 @@
     name: NetworkManager
     enabled: yes
 
+- name: enable bluetooth
+  systemd:
+    name: bluetooth
+    enabled: yes
+
 # This will only run when its attached task runs due to a change
 - name: xdg-user-dirs-update
   shell: >

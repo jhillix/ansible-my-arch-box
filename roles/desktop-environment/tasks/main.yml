@@ -25,7 +25,7 @@
     state: present
   become: yes
   notify:
-  - enable lxdm
+    - enable lxdm
 
 - name: Install networkmanager
   pacman:
@@ -33,7 +33,7 @@
     state: present
   become: yes
   notify:
-  - enable NetworkManager
+    - enable NetworkManager
 
 - name: Install gnome-keyring
   pacman:
@@ -46,6 +46,8 @@
     name: blueberry
     state: present
   become: yes
+  notify:
+    - enable bluetooth
 
 - name: Install Cinnamon themes and icons
   aur:
