@@ -93,3 +93,57 @@
   file:
     path: "{{  home  }}/workspace"
     state: directory
+
+- name: Install sans-serif font
+  pacman:
+    name: ttf-freefont
+    state: present
+  become: yes
+
+- name: Install ttf-merriweather (ttf-google-fonts-git dependency)
+  aur:
+    name: ttf-merriweather
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install ttf-merriweather-sans (ttf-google-fonts-git dependency)
+  aur:
+    name: ttf-merriweather-sans
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install ttf-oswald (ttf-google-fonts-git dependency)
+  aur:
+    name: ttf-oswald
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install ttf-quintessential (ttf-google-fonts-git dependency)
+  aur:
+    name: ttf-quintessential
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install ttf-signika (ttf-google-fonts-git dependency)
+  aur:
+    name: ttf-signika
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install ttf-google-fonts-git
+  aur:
+    name: ttf-google-fonts-git
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
