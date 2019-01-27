@@ -1,0 +1,16 @@
+---
+- name: Install DOOM (the original)
+  aur:
+    name: chocolate-doom-git
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
+
+- name: Install DOOM WAD
+  aur:
+    name: doom1-wad
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder

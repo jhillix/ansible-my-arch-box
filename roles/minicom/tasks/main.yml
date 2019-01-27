@@ -1,0 +1,6 @@
+---
+- name: Install minicom
+  pacman:
+    name: minicom
+    state: present
+  become: yes
