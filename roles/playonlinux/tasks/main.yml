@@ -1,0 +1,6 @@
+---
+- name: Install playonlinux
+  pacman:
+    name: playonlinux
+    state: present
+  become: yes

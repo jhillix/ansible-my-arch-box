@@ -1,0 +1,24 @@
+---
+- name: Install xf86-input-libinput
+  pacman:
+    name: xf86-input-libinput
+    state: present
+  become: yes
+
+# By default since the given line is not present in the file, it is written at the end of the file and will not be
+# written again if already present.
+# https://wiki.archlinux.org/index.php/Logitech_Marble_Mouse#Sample_Configurations
+- name: Configure Logitech Marble Mouse
+  lineinfile:
+    path: /usr/share/X11/xorg.conf.d/40-libinput.conf
+    line: "{{ item }}"
+  loop:
+    - 'Section "InputClass"'
+    - '        Identifier   "Marble Mouse"'
+    - '        MatchProduct "Logitech USB Trackball"'
+    - '        Driver       "libinput"'
+    - '        Option       "ScrollMethod"    "button"'
+    - '        Option       "ScrollButton"    "8"'
+    - '        Option       "MiddleEmulation" "true"'
+    - 'EndSection'
+  become: yes
