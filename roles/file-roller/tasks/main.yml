@@ -4,3 +4,9 @@
     name: file-roller
     state: present
   become: yes
+
+- name: Install archive utility extension for Nemo
+  pacman:
+    name: nemo-fileroller
+    state: present
+  become: yes

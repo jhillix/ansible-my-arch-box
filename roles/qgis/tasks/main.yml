@@ -1,0 +1,24 @@
+---
+- name: Install qgis
+  pacman:
+    name: qgis
+    state: present
+  become: yes
+
+- name: Install GPSBabel
+  pacman:
+    name: gpsbabel
+    state: present
+  become: yes
+
+- name: Configure Garmin UDEV rule
+  template:
+    src: 51-garmin.rules.j2
+    dest: /etc/udev/rules.d/51-garmin.rules
+  become: yes
+
+- name: Blacklist garmin_gps kernel driver
+  template:
+    src: blacklist.j2
+    dest: /etc/modprobe.d/blacklist
+  become: yes
