@@ -1,0 +1,6 @@
+---
+- name: Install Visual Studio Code
+  pacman:
+    name: code
+    state: present
+  become: yes
