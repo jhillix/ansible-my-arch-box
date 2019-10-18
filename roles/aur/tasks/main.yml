@@ -46,3 +46,11 @@
     skip_installed: yes
   become: yes
   become_user: aur_builder
+
+- name: Install libmodbus
+  aur:
+    name: libmodbus
+    use: makepkg
+    skip_installed: yes
+  become: yes
+  become_user: aur_builder
