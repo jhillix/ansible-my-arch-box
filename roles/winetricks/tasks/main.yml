@@ -1,0 +1,16 @@
+---
+- name: Install winetricks
+  pacman:
+    name: winetricks
+    state: present
+  become: yes
+
+# This can be used to install DLLs, libs - like .NET - etc. for wine applications.
+# This link has a good example of how to use wine and winetricks:
+#     https://askubuntu.com/questions/548909/running-net-4-0-application-with-wine
+# This can also be used in conjunction with PlayOnLinux when you have issues getting an application to run
+# on PlayOnLinux. Meaning, install the needfuls with winetricks to get the desired application running then
+# install the same application using PlayOnLinux and then copy over everything in the wine-APPLICATION directory
+# to the PlayOnLinux winetricks directory. Now, you could just not use PlayOnLinux and just stick with wine and
+# winetricks but PlayOnLinux has some nice features. The main one being a single place to house all of your wine
+# applications with some nice GUI tools.
