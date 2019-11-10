@@ -1,0 +1,9 @@
+---
+#- name: Install codesys
+#  pacman:
+#    name:
+#    state: present
+#  become: yes
+
+# This needs to be done manually
+# TODO: Add steps
