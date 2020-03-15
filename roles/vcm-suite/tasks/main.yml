@@ -1,0 +1,8 @@
+---
+# This needs to be done manually
+# 1. Use PlayOnLinux to setup a 32-bit virtual drive and name it "vcm-suite"
+# 2. Open CLI
+# 3. export WINEARCH="win32"
+# 4. export WINEPREFIX=~/.wine-vcm-suite-64bit/
+# 5. Install .Net 4.6.1: winetricks dotnet461
+# 6. Back in PlayOnLinux install VCM suite with downloaded MSI from HP Tuners
